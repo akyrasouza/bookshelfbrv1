@@ -3,6 +3,4 @@ export interface Generos {
   nomeGenero: string;
   decimalGenero: string;
   livrosGenero: number;
-
-
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bookshelfbrv1": {
+    "bookshelf_v1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bookshelfbrv1",
+            "outputPath": "dist/bookshelf_v1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bookshelfbrv1:build:production"
+              "browserTarget": "bookshelf_v1:build:production"
             },
             "development": {
-              "browserTarget": "bookshelfbrv1:build:development"
+              "browserTarget": "bookshelf_v1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bookshelfbrv1:build"
+            "browserTarget": "bookshelf_v1:build"
           }
         },
         "test": {
@@ -109,5 +109,5 @@
       }
     }
   },
-  "defaultProject": "bookshelfbrv1"
+  "defaultProject": "bookshelf_v1"
 }
