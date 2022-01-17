@@ -11,7 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
 export class NavegacaoComponent {
   //Itens do menu principal
   tituloNav= 'BookShelf v1';
-  usuario={userName: 'Akyra', icone:'remenber_me'};
+  usuario={userName: 'Akyra Souza', icone:'remember_me'};
   //Itens da barra superior
   tituloBarra= '[Sua Estante Virtual]';
   //Itens de icones e imagens de navegacao
@@ -21,7 +21,7 @@ export class NavegacaoComponent {
   //Controle das rotas do menu.
   itensMenu= [
     {linkMenu: '/cdd', labelMenu:'Classes Dewey',hab: true},
-    {linkMenu: '/feed', labelMenu:'Feed Noticias',hab: false},
+    {linkMenu: '/feed', labelMenu:'Feed Noticias',hab: true},
     {linkMenu: '/clube', labelMenu:'Pagina Usuario',hab: false},
     {linkMenu: '/leitura', labelMenu:'Clubes de Leitura',hab: false},
     {linkMenu: '/estante', labelMenu:'Estante Particular',hab: false},
