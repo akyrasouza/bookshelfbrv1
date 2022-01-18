@@ -5,7 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>{{tituloNav}}</mat-toolbar>
     <p><mat-icon aria-label="Usuário">{{usuario.icone}}</mat-icon> {{usuario.userName}}</p>
-    <mat-nav-list  *ngFor="let itenMenu of itensMenu">
+    <mat-nav-list  *ngFor="let itenMenu of itensMenu$ | async; index as i">
       <a mat-list-item *ngIf="itenMenu.hab === true" [href]="itenMenu.linkMenu">{{itenMenu.labelMenu}}</a>
     </mat-nav-list>
   </mat-sidenav>
