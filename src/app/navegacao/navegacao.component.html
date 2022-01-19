@@ -4,7 +4,7 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>{{tituloNav}}</mat-toolbar>
-    <p><mat-icon aria-label="Usuário">{{usuario.icone}}</mat-icon> {{usuario.userName}}</p>
+
     <mat-nav-list  *ngFor="let itenMenu of itensMenu$ | async; index as i">
       <a mat-list-item *ngIf="itenMenu.hab === true" [href]="itenMenu.linkMenu">{{itenMenu.labelMenu}}</a>
     </mat-nav-list>
@@ -20,7 +20,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <img mat-card-sm-image [width]="lIcone" [height]="aIcone" [src]="iconeGeral">
-      <span>{{tituloBarra}}</span>
+      <button mat-raised-button color="primary">
+        <mat-icon class="mat-18">login</mat-icon>
+        LOGIN</button>
     </mat-toolbar>
     <router-outlet></router-outlet><!--Vem da rota do 'cdd'-->
   </mat-sidenav-content>

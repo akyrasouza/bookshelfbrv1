@@ -14,9 +14,6 @@ import { map, shareReplay } from 'rxjs/operators';
 export class NavegacaoComponent {
   //Itens do menu principal
   tituloNav= 'BookShelf v1';
-  usuario={userName: 'Akyra Souza', icone:'remember_me'};
-  //Itens da barra superior
-  tituloBarra= '[Sua Estante Virtual]';
   //Itens de icones e imagens de navegacao
   iconeGeral='../../assets/imagens/ShelfBook.png';
   lIcone= 80;
