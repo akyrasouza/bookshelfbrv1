@@ -1,3 +1,4 @@
+import { AutenticacaoFirebaseService } from './../servicosInterface/autenticacao-firebase.service';
 import { DashboardService } from './../servicosInterface/dashboard.service';
 import { Dashboard } from './../modelosInterface/dashboard';
 import { Component } from '@angular/core';
@@ -12,8 +13,9 @@ import { catchError,Observable, of } from 'rxjs';
 })
 export class FeedComponent {
   /** Based on the screen size, switch from standard to one column per row */
- usuario = {userName:'Akyra Souza', icone:'remember_me'}
+
  cards$: Observable<Dashboard[]>
+ usuario$ = this.autenticacaoFirebaseService.usuarioLogado$;
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -27,7 +29,8 @@ export class FeedComponent {
   //Chama os Serviços
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    private autenticacaoFirebaseService: AutenticacaoFirebaseService
     ) {
       this.cards$= dashboardService.listagemCards()
       .pipe(

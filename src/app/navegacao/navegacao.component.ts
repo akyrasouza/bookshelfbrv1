@@ -18,7 +18,7 @@ export class NavegacaoComponent {
   //traz a verificao de autenticacao do usuario
   usuario$ = this.autenticacaoFirebaseService.usuarioLogado$;
   //Itens do menu principal
-  tituloNav= 'BookShelf v1';
+  logoMenu= '../../assets/imagens/logoBS4.png';
   //Itens de icones e imagens de navegacao
   iconeGeral='../../assets/imagens/ShelfBook.png';
   lIcone= 80;

@@ -3,8 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>{{tituloNav}}</mat-toolbar>
-
+      <img mat-card-image [src]="logoMenu" alt="Imagem do logo no menu">
     <mat-nav-list  *ngFor="let itenMenu of itensMenu$ | async; index as i">
       <a mat-list-item *ngIf="itenMenu.hab === true" [href]="itenMenu.linkMenu">{{itenMenu.labelMenu}}</a>
     </mat-nav-list>
@@ -21,9 +20,10 @@
       </button>
       <img mat-card-sm-image [width]="lIcone" [height]="aIcone" [src]="iconeGeral">
       <ng-container *ngIf="usuario$ | async as usuario; else botaoLogin">
-        <button mat-raised-button color="primary" (click)="sairUsuario()">
-          <mat-icon class="mat-18">logout</mat-icon>
-          LOGOUT
+        <button mat-raised-button color="primary" [mat-menu-trigger-for]="usuarioMenu">
+          <mat-icon class="mat-18">local_library</mat-icon>
+          {{usuario.displayName}}
+          <mat-icon>expand_more</mat-icon>
         </button>
       </ng-container>
       <ng-template #botaoLogin>
@@ -33,6 +33,9 @@
         </button>
       </ng-template>
     </mat-toolbar>
+    <mat-menu #usuarioMenu="matMenu">
+      <button mat-menu-item (click)="sairUsuario()">LOGOUT</button>
+    </mat-menu>
     <router-outlet></router-outlet><!--Vem da rota do 'cdd'-->
   </mat-sidenav-content>
 </mat-sidenav-container>
